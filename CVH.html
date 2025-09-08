@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chọn Gu Bạn Trai 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      width: 95%;
+      max-width: 750px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    h1 {
+      text-align: center;
+      color: #ec4899;
+      margin-bottom: 20px;
+    }
+    .input-group { margin: 10px 0; }
+    label {
+      font-weight: bold;
+      color: #7e22ce;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      margin-top: 5px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    select:focus { border-color: #ec4899; box-shadow: 0 0 8px #f9a8d4; outline: none; }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      transition: 0.3s;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: center; }
+    th { background: #f9a8d4; color: #831843; }
+    .event-box {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #fdf2f8;
+      border: 2px dashed #ec4899;
+      text-align: center;
+      color: #831843;
+      font-weight: bold;
+      animation: fadeIn 0.8s ease;
+    }
+    /* Hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      color: #ec4899;
+      animation: floatUp 3s linear forwards;
+      opacity: 0.8;
+      z-index: 999;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-600px) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💘 Chọn Gu Bạn Trai 💘</h1>
+
+    <!-- 10 tiêu chí -->
+    <div class="input-group"><label>Ngoại hình</label>
+      <select id="ngoaiHinh"><option value="">-- Chọn --</option><option>Cao ráo</option><option>Thấp dễ thương</option><option>Body chuẩn</option><option>Mũm mĩm</option></select>
+    </div>
+    <div class="input-group"><label>Tính cách</label>
+      <select id="tinhCach"><option value="">-- Chọn --</option><option>Vui vẻ</option><option>Trầm tính</option><option>Lãng mạn</option><option>Hài hước</option><option>Chín chắn</option></select>
+    </div>
+    <div class="input-group"><label>Sở thích</label>
+      <select id="soThich"><option value="">-- Chọn --</option><option>Du lịch</option><option>Đọc sách</option><option>Ăn uống</option><option>Thể thao</option><option>Chơi game</option></select>
+    </div>
+    <div class="input-group"><label>Nghề nghiệp</label>
+      <select id="ngheNghiep"><option value="">-- Chọn --</option><option>Sinh viên</option><option>Nhân viên văn phòng</option><option>Kinh doanh</option><option>Kỹ sư / IT</option><option>Nghệ sĩ</option></select>
+    </div>
+    <div class="input-group"><label>Gu ăn mặc</label>
+      <select id="anMac"><option value="">-- Chọn --</option><option>Lịch lãm</option><option>Năng động</option><option>Đơn giản</option><option>Phong trần</option></select>
+    </div>
+    <div class="input-group"><label>Khả năng tài chính</label>
+      <select id="taiChinh"><option value="">-- Chọn --</option><option>Ổn định</option><option>Giàu có</option><option>Bình thường</option></select>
+    </div>
+    <div class="input-group"><label>Trình độ học vấn</label>
+      <select id="hocVan"><option value="">-- Chọn --</option><option>Đại học</option><option>Cao đẳng</option><option>Trung cấp</option><option>Thạc sĩ/ Tiến sĩ</option></select>
+    </div>
+    <div class="input-group"><label>Quan điểm tình yêu</label>
+      <select id="tinhYeu"><option value="">-- Chọn --</option><option>Lãng mạn</option><option>Thực tế</option><option>Chung thủy</option><option>Tự do</option></select>
+    </div>
+    <div class="input-group"><label>Gia đình</label>
+      <select id="giaDinh"><option value="">-- Chọn --</option><option>Yêu trẻ con</option><option>Thích sống gần bố mẹ</option><option>Thích tự lập</option></select>
+    </div>
+    <div class="input-group"><label>Ưu tiên khác</label>
+      <select id="uuTien"><option value="">-- Chọn --</option><option>Biết nấu ăn</option><option>Biết chơi nhạc cụ</option><option>Giỏi giao tiếp</option><option>Siêng năng</option></select>
+    </div>
+
+    <button onclick="xemBaoCao()">💌 Xem Báo Cáo Gu</button>
+    <button onclick="suKienBatNgo()">🎲 Sự Kiện Bất Ngờ</button>
+
+    <!-- Báo cáo -->
+    <table id="baoCao" style="display:none;">
+      <tr><th>Tiêu chí</th><th>Lựa chọn</th></tr>
+      <tr><td>Ngoại hình</td><td id="outNgoaiHinh"></td></tr>
+      <tr><td>Tính cách</td><td id="outTinhCach"></td></tr>
+      <tr><td>Sở thích</td><td id="outSoThich"></td></tr>
+      <tr><td>Nghề nghiệp</td><td id="outNgheNghiep"></td></tr>
+      <tr><td>Gu ăn mặc</td><td id="outAnMac"></td></tr>
+      <tr><td>Tài chính</td><td id="outTaiChinh"></td></tr>
+      <tr><td>Học vấn</td><td id="outHocVan"></td></tr>
+      <tr><td>Tình yêu</td><td id="outTinhYeu"></td></tr>
+      <tr><td>Gia đình</td><td id="outGiaDinh"></td></tr>
+      <tr><td>Ưu tiên khác</td><td id="outUuTien"></td></tr>
+    </table>
+
+    <div class="event-box" id="eventBox">💖 Sự kiện bất ngờ sẽ hiện ở đây 💖</div>
+  </div>
+
+  <script>
+    function xemBaoCao() {
+      document.getElementById("baoCao").style.display = "table";
+
+      const selects = ["ngoaiHinh","tinhCach","soThich","ngheNghiep","anMac","taiChinh","hocVan","tinhYeu","giaDinh","uuTien"];
+      selects.forEach(id => {
+        document.getElementById("out" + id.charAt(0).toUpperCase() + id.slice(1))
+          .innerText = document.getElementById(id).value || "Chưa chọn";
+      });
+
+      // Nếu chọn đủ 10 thì thả tim
+      if (selects.every(id => document.getElementById(id).value)) taoTim();
+    }
+
+    function suKienBatNgo() {
+      const events = [
+        "Anh ấy bất ngờ tặng bạn một bó hoa 🌹",
+        "Anh ấy rủ bạn đi xem phim 🎬",
+        "Anh ấy nấu ăn cho bạn 🍲",
+        "Anh ấy chơi đàn hát tặng bạn 🎶",
+        "Anh ấy im lặng một ngày làm bạn lo 😶",
+        "Anh ấy mua trà sữa cho bạn 🧋",
+        "Anh ấy dẫn bạn đi du lịch ✈️",
+        "Anh ấy chơi game quên nhắn tin 🎮"
+      ];
+      const randomEvent = events[Math.floor(Math.random() * events.length)];
+      const box = document.getElementById("eventBox");
+      box.innerText = randomEvent;
+      box.style.display = "block";
+    }
+
+    function taoTim() {
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
